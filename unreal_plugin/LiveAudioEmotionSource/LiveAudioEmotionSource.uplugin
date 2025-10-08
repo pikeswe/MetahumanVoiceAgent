@@ -1,0 +1,25 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0.0",
+  "FriendlyName": "Live Audio Emotion Source",
+  "Description": "Streams local PCM audio and emotion curves into UE5 MetaHuman Animator.",
+  "Category": "MetaHuman",
+  "CreatedBy": "MetahumanVoiceAgent",
+  "CreatedByURL": "https://github.com/pikeswe/MetahumanVoiceAgent",
+  "DocsURL": "https://github.com/pikeswe/MetahumanVoiceAgent",
+  "Modules": [
+    {
+      "Name": "LiveAudioEmotionSource",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "WebSockets",
+      "Enabled": true
+    }
+  ],
+  "CanContainContent": false
+}

@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+websockets
+numpy
+soundfile
+pydub
+json5
+neutts-air

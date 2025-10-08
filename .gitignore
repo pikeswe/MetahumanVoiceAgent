@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dll
+build/
+dist/
+*.egg-info/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Models and binaries
+models/
+bin/
+
+# Unreal
+DerivedDataCache/
+Saved/
+Intermediate/
+*.sln
+*.VC.db
