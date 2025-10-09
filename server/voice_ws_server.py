@@ -20,6 +20,10 @@ class StreamConfig:
     sample_rate: int = 22050
     channels: int = 1
     chunk_ms: int = 20
+    backend: str = "mock"
+    lookahead: int = 0
+    lookback: int = 0
+    interpolate: bool = False
 
 
 class VoiceStreamServer:
@@ -41,6 +45,10 @@ class VoiceStreamServer:
                         "sample_rate": self.config.sample_rate,
                         "channels": self.config.channels,
                         "chunk_ms": self.config.chunk_ms,
+                        "backend": self.config.backend,
+                        "lookahead": self.config.lookahead,
+                        "lookback": self.config.lookback,
+                        "interpolate": self.config.interpolate,
                     }
                 )
             )
@@ -64,6 +72,12 @@ class VoiceStreamServer:
     async def start(self) -> None:
         logger.info("Starting voice WebSocket server on %s:%d", self.host, self.port)
         self._server = await websockets.serve(self.handler, self.host, self.port, ping_interval=20, ping_timeout=20)
+        if self._server and self._server.sockets:
+            socket = self._server.sockets[0]
+            bound_port = socket.getsockname()[1]
+            if bound_port != self.port:
+                logger.info("Voice server bound to port %d", bound_port)
+                self.port = bound_port
 
     async def stop(self) -> None:
         if self._server:

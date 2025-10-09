@@ -6,3 +6,6 @@ soundfile
 pydub
 json5
 neutts-air
+requests
+pytest
+pytest-asyncio
