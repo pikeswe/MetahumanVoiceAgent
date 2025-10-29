@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metahuman Voice Agent</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Metahuman Voice Agent</h1>
+    <button id="repeat-btn" title="Repeat last response">Repeat last</button>
+  </header>
+  <main>
+    <section id="controls">
+      <button id="ptt-btn">Hold to Talk (Space)</button>
+      <div class="status" id="status-text">Idle</div>
+    </section>
+    <section id="transcript">
+      <h2>Transcript</h2>
+      <div id="transcript-log"></div>
+    </section>
+    <section id="llm">
+      <h2>Assistant</h2>
+      <div id="llm-log"></div>
+    </section>
+    <section id="settings">
+      <h2>Settings</h2>
+      <label>
+        Output device
+        <select id="output-device"></select>
+      </label>
+      <label>
+        LLM model
+        <input type="text" id="ollama-model" placeholder="llama3.1:8b" />
+      </label>
+      <label>
+        TTS backend
+        <select id="tts-backend">
+          <option value="piper">Piper</option>
+          <option value="neutts">NeuTTS-Air</option>
+        </select>
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" id="speak-partials" /> Speak partial LLM tokens
+      </label>
+      <button id="save-settings">Save</button>
+    </section>
+  </main>
+  <section id="chat">
+    <h2>Text Chat</h2>
+    <div id="chat-log"></div>
+    <div class="chat-input">
+      <input type="text" id="chat-input" placeholder="Type a prompt and press Enter" />
+      <button id="chat-send">Send</button>
+    </div>
+  </section>
+  <script src="/static/main.js"></script>
+</body>
+</html>

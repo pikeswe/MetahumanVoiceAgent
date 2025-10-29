@@ -1,0 +1,14 @@
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-dotenv>=1.0.0
+sounddevice>=0.4.6
+webrtcvad>=2.0.10
+numpy>=1.26.0
+scipy>=1.11.0
+pydub>=0.25.1
+aiohttp>=3.9.0
+requests>=2.31.0
+faster-whisper>=0.10.0
+piper-phonemize>=1.2.0
+pyaudio>=0.2.14; platform_system=="Windows"
+resampy>=0.4.2
